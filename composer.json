@@ -1,6 +1,6 @@
 {
-    "name": "diegobentes/inflection",
-    "description": "Este pacote serve para adicionar inflection irregular ao mdb framework",
+    "name": "uphp/inflection",
+    "description": "Este pacote serve para adicionar inflection irregular ao uphp",
     "authors": [ 
         {
             "name": "Diego Bentes",
