@@ -1,2 +1,1 @@
-# inflection
-pt-br: Plugin para tratar inflection de strings
+Repositório do plugin Inflection irregular para mdb framework
