@@ -9,6 +9,6 @@
         "papel" => "papeis"
     ]);
 
-    echo Inflection::pluralize("test");
+    echo Inflection::pluralize("papel");
     echo "<br>";
     echo Inflection::singularize("tests");
