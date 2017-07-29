@@ -44,4 +44,38 @@
         public static function uninflected(Array $arrayInflectionUninflected){
             parent::rules( 'plural', [ 'uninflected' => $arrayInflectionUninflected ] );
         }
+
+        public static function variablize($s) { return str_replace(array('-',' '),array('_','_'),strtolower(trim($s))); }
+
+        public static function keyify($class_name)
+        {
+            return strtolower(self::underscorify(self::denamespace($class_name))) . '_id';
+        }
+
+        public static function underscorify($s)
+        {
+            return preg_replace(array('/[_\- ]+/','/([a-z])([A-Z])/'),array('_','\\1_\\2'),trim($s));
+        }
+
+        private static function denamespace($class_name){
+            if (is_object($class_name))
+                $class_name = get_class($class_name);
+
+            if (self::has_namespace($class_name))
+            {
+                $parts = explode('\\', $class_name);
+                return end($parts);
+            }
+
+            return $class_name;
+        }
+
+        private static function has_namespace($class_name)
+        {
+            if (strpos($class_name, '\\') !== false)
+                return true;
+            return false;
+        }
+
+
     }
